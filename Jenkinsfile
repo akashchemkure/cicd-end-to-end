@@ -32,7 +32,7 @@ pipeline {
                 script{
                     sh '''
                     echo 'Push to Repo'
-                    docker push aakashchemkure/cicd-e2e:1
+                    docker push akashchemkure/cicd-e2e:1
                     '''
                 }
             }
