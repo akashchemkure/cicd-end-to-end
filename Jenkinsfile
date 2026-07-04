@@ -2,10 +2,6 @@ pipeline {
     
     agent any 
     
-    environment {
-        IMAGE_TAG = 1
-    }
-    
     stages {
         
         stage('Checkout'){
@@ -19,10 +15,10 @@ pipeline {
         stage('Build Docker'){
             steps{
                 script{
-                    sh '''
-                    echo 'Buid Docker Image'
+                    sh """
+                    echo 'Build Docker Image'
                     docker build -t akashchemkure97/cicd-e2e:${BUILD_NUMBER} .
-                    '''
+                    """
                 }
             }
         }
@@ -30,10 +26,10 @@ pipeline {
         stage('Push the artifacts'){
            steps{
                 script{
-                    sh '''
+                    sh """
                     echo 'Push to Repo'
                     docker push akashchemkure97/cicd-e2e:${BUILD_NUMBER}
-                    '''
+                    """
                 }
             }
         }
