@@ -10,7 +10,7 @@ pipeline {
         
         stage('Checkout'){
            steps {
-                git credentialsId: 'dae6b64c117842ffbc635206615bab51', 
+                git credentialsId: 'github-credentials', 
                 url: 'https://github.com/akashchemkure/cicd-end-to-end',
                 branch: 'main'
            }
